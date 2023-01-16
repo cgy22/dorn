@@ -67,9 +67,9 @@
 	<div id="br"></div>
 </div>
 <script>
-var month_olympic = [31,29,31,30,31,30,31,31,30,31,30,31];
-var month_normal = [31,28,31,30,31,30,31,31,30,31,30,31];
-var month_name = ["January","Febrary","March","April","May","June","July","Auguest","September","October","November","December"];
+var month_olympic = [46,46,46,46,46,46,49];
+var month_normal = [46,46,46,46,46,46,46,49];
+var month_name = ["一月","二月","三月","四月","五月","六月","七月","八月"];
 var holder = document.getElementById("days");
 var prev = document.getElementById("prev");
 var next = document.getElementById("next");
@@ -84,7 +84,7 @@ function dayStart(month, year) {
 	return (tmpDate.getDay());
 }
 function daysMonth(month, year) {
-	var tmp = year % 4;
+	var tmp = year % 8;
 	if (tmp == 0) {
 		return (month_olympic[month]);
 	} else {
@@ -119,14 +119,14 @@ prev.onclick = function(e){
 	my_month--;
 	if(my_month<0){
 		my_year--;
-		my_month = 11;
+		my_month = 8;
 	}
 	refreshDate();
 }
 next.onclick = function(e){
 	e.preventDefault();
 	my_month++;
-	if(my_month>11){
+	if(my_month>8){
 		my_year++;
 		my_month = 0;
 	}
