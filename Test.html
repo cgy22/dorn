@@ -117,7 +117,7 @@ refreshDate(); //执行该函数
 prev.onclick = function(e){
 	e.preventDefault();
 	my_month--;
-	if(my_month<0){
+	if(my_month<1){
 		my_year--;
 		my_month = 8;
 	}
@@ -128,7 +128,7 @@ next.onclick = function(e){
 	my_month++;
 	if(my_month>8){
 		my_year++;
-		my_month = 0;
+		my_month = 1;
 	}
 	refreshDate();
 }
