@@ -120,6 +120,16 @@ var day = daym1 + 1;
 document.getElementById("title_year1").innerHTML = year;
 document.getElementById("title_month1").innerHTML = month;
 document.getElementById("title_day1").innerHTML = day;
+function daysMonth(year) {
+	var tmp = year % 8;
+	var Olympic;
+	if (tmp == 0) {
+		Olympic = "今年是闰年";
+	} else {
+		Olympic = "今年是普通年（不是闰年）";
+	}
+	document.getElementById("title_Olympic").innerHTML = Olympic;
+}
 </script>
 
 </body>
