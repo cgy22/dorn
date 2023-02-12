@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dornhub | 𣿅国音乐文化传播第一季下载</title>
+	<link rel="icon" href="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimage2.sina.com.cn%2FIT%2Fother%2F2004-06-10%2FU73P2T1D374147F13DT20040610173949.jpg&refer=http%3A%2F%2Fimage2.sina.com.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1672128169&t=72b87204897814c21f69b40aec9b3ef4">
+	<link rel="stylesheet" href="https://dornhub.github.io/css/kernel.css" type="text/css" />
+</head>
+<body>
+
+<img src="" id="bg">
+
+<div id="nav">
+	<p>
+		<span id="navname1">Dorn</span>
+		<span id="navname2">&nbsp;Hub&nbsp;</span>
+		&nbsp;&nbsp;
+		<button id="navbut1" onclick="window.open('https://dornhub.github.io/','_self')">首页</button>
+		<button id="navbut2" onclick="window.open('https://dornhub.github.io/phygeo','_self')">自然</button>
+		<button id="navbut3" onclick="window.open('https://dornhub.github.io/humgeo','_self')">人文</button>
+		<button id="navbut4" onclick="window.open('https://dornhub.github.io/news','_self')">新闻</button>
+		<button id="navbut5" onclick="window.open('https://dornhub.github.io/language','_self')">语言</button>
+		<button id="navbut6" onclick="window.open('https://dornhub.github.io/scitech','_self')">科技</button>
+		<button id="navbut7" onclick="window.open('https://dornhub.github.io/govser','_self')">行政服务</button>
+		<button id="navbut8" onclick="window.open('https://cgy22.github.io/dorn/index.html','_self')">←返回</button>
+	</p>
+</div>
+
+<br><br><br>
+
+
+<div id="text">
+	<div id="title" align="center">
+		<p id="title_don">𣿅国日期（暂无闰年服务）</p>
+		
+			<br><br><br><br><br><br>
+		
+	</div>
+  <div id="title" align="center">
+		<p id="title_don">今天是𣿅历：</p>
+		
+			<br><br><br><br><br><br>
+		
+	</div>
+  <div id="title" align="center">
+		<p style="font-size: 500%" id="title_year1">2020</p>
+		
+			<br><br><br><br><br><br>
+		
+	</div>
+  <div id="title" align="center">
+		<p id="title_don">年</p>
+		
+			<br><br><br><br><br><br>
+		
+	</div>
+  <div id="title" align="center">
+		<p style="font-size: 500%" id="title_month1">1</p>
+		
+			<br><br><br><br><br><br>
+		
+	</div>
+  <div id="title" align="center">
+		<p id="title_don">月</p>
+		
+			<br><br><br><br><br><br>
+		
+	</div>
+  <div id="title" align="center">
+		<p style="font-size: 500%" id="title_day1">1</p>
+		
+			<br><br><br><br><br><br>
+		
+	</div>
+  <div id="title" align="center">
+		<p id="title_don">日</p>
+		
+			<br><br><br><br><br><br>
+		
+	</div>
+	<br>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<div id="bottom_div">
+	<div id="br"></div>
+	<p>1303CGY提供此网页的代理服务</p>
+	<p>Bilibili : <a href="https://space.bilibili.com/1307832486?spm_id_from=..0.0">UID1307832486</a></p>
+	<div id="br"></div>
+</div>
+
+<script>
+var date = new Date();
+var ms = date.getTime();
+var msnow = ms - 1577808000000;
+var leftms = msnow % 32054400000;
+var actualms = msnow - leftms;
+var yearm1 = actualms / 32054400000;
+var year = yearm1 + 1;
+var monthleftms = leftms % 3974400000;
+var actualmonthms = leftms - monthleftms;
+var monthm1 = actualmonthms / 3974400000;
+var month = monthm1 + 1;
+var dayleftms = monthleftms % 86400000;
+var actualdayms = monthleftms - dayleftms;
+var daym1 = actualdayms / 86400000;
+var day = daym1 + 1;
+document.getElementById("title_year1").innerHTML = year;
+document.getElementById("title_month1").innerHTML = month;
+document.getElementById("title_day1").innerHTML = day;
+</script>
+
+</body>
+</html>
