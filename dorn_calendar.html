@@ -103,7 +103,7 @@
 
 <script>
 var date = new Date();
-var ms = date.getTime();
+var ms = date.getTime() + addms;
 var msnow = ms - 1577808000000;
 var leftms = msnow % 32054400000;
 var actualms = msnow - leftms;
