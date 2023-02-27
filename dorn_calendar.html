@@ -102,9 +102,9 @@
 </div>
 
 <script>
-var date = new Date();
-var ms = date.getTime() + addms;
-var msnow = ms - 1577808000000;
+var shi_ji_ri_qi = new Date();
+var hao_miao_shu = date.getTime() + addms;
+var cong_2020_dao_xian_zai_de_hao_miao_shu = ms - 1577808000000;
 var leftms = msnow % 32054400000;
 var actualms = msnow - leftms;
 var yearm1 = actualms / 32054400000;
@@ -120,16 +120,6 @@ var day = daym1 + 1;
 document.getElementById("title_year1").innerHTML = year;
 document.getElementById("title_month1").innerHTML = month;
 document.getElementById("title_day1").innerHTML = day;
-function daysMonth(year) {
-	var tmp = year % 8;
-	var Olympic;
-	if (tmp == 0) {
-		Olympic = "今年是闰年";
-	} else {
-		Olympic = "今年是普通年（不是闰年）";
-	}
-	document.getElementById("title_Olympic").innerHTML = Olympic;
-}
 </script>
 
 </body>
