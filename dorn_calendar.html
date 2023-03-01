@@ -102,22 +102,26 @@
 </div>
 
 <script>
-var shi_ji_ri_qi = new Date();
-var hao_miao_shu = date.getTime() + addms;
-var cong_2020_dao_xian_zai_de_hao_miao_shu = ms - 1577808000000;
-var leftms = msnow % 32054400000;
-var actualms = msnow - leftms;
-var yearm1 = actualms / 32054400000;
-var year = yearm1 + 1;
-var monthleftms = leftms % 3974400000;
-var actualmonthms = leftms - monthleftms;
-var monthm1 = actualmonthms / 3974400000;
-var month = monthm1 + 1;
-var dayleftms = monthleftms % 86400000;
-var actualdayms = monthleftms - dayleftms;
-var daym1 = actualdayms / 86400000;
-var day = daym1 + 1;
-document.getElementById("title_year1").innerHTML = year;
+var date = new Date();
+var ms = date.getTime();
+var actual = ms - 1577808000000;
+var left = actual % 32054400000;
+var yearms = actual - left;
+var year = yearms / 32054400000 + 1;
+var leftyear = year % 8;
+var leftyear1 = year - leftyear;
+var Olympics = leftyear1 * 32054400000; //fengexian
+var actual2 = actual + Olympics;
+var left2 = actual2 % 32054400000;
+var yearms2 = actual2 - left2;
+var year2 = yearms2 / 32054400000 + 1;
+var leftmonth2 = left2 % 3974400000;
+var actualmonthms = left2 - leftmonth2;
+var month = actualmonthms / 3974400000 + 1;
+var leftdayms = leftmonth2 % 86400000;
+var dayms = leftmonth2 - leftdayms;
+var day = dayms / 86400000 + 1;
+document.getElementById("title_year1").innerHTML = year2;
 document.getElementById("title_month1").innerHTML = month;
 document.getElementById("title_day1").innerHTML = day;
 </script>
