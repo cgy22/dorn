@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Dornhub | 𣿅国日历</title>
+	<title>Dornhub | 𣿅国时间</title>
 	<link rel="icon" href="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimage2.sina.com.cn%2FIT%2Fother%2F2004-06-10%2FU73P2T1D374147F13DT20040610173949.jpg&refer=http%3A%2F%2Fimage2.sina.com.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1672128169&t=72b87204897814c21f69b40aec9b3ef4">
 	<link rel="stylesheet" href="https://dornhub.github.io/css/kernel.css" type="text/css" />
 </head>
-<body>
+<body onload="startTime()">
 
 <img src="" id="bg">
 
@@ -30,9 +30,16 @@
 
 <div id="text">
 	<div id="title" align="center">
-		<p id="title_don">𣿅国日历</p>
+		<p id="title_don">𣿅国时间</p>
 		
 			<br><br><br><br><br><br>
+		
+	</div>
+  <div id="curtime" align="center">
+		<p style="font-size: 500%" id="curtime">时间</p>
+		
+			<br><br><br><br><br><br>
+		
 		
 	</div>
   <div id="title" align="center">
@@ -75,7 +82,7 @@
 		<p id="title_don">日</p>
 		
 			<br><br><br><br><br><br>
-		
+	
 	</div>
 	 <div id="title" align="center">
 		<p id="title_don">𣿅历简介：</p>
@@ -121,6 +128,22 @@ var month = actualmonthms / 3974400000 + 1;
 var leftdayms = leftmonth2 % 86400000;
 var dayms = leftmonth2 - leftdayms;
 var day = dayms / 86400000 + 1;
+function startTime(){
+	var today=new Date();
+	var h=today.getHours();
+	var m=today.getMinutes();
+	var s=today.getSeconds();
+	m=checkTime(m);
+	s=checkTime(s);
+	document.getElementById('curtime').innerHTML=h+":"+m+":"+s;
+	t=setTimeout(function(){startTime()},500);
+}
+function checkTime(i){
+	if (i<10){
+		i="0" + i;
+	}
+	return i;
+}
 document.getElementById("title_year1").innerHTML = year2;
 document.getElementById("title_month1").innerHTML = month;
 document.getElementById("title_day1").innerHTML = day;
