@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
   <head>
     <meta charset="UTF-8" />
     <title>DornSearch搜索引擎</title>
@@ -14,10 +14,17 @@
 			font-weight: 900;
 			font-size:35px;
 		}
-		#curtime p{
-			color:#6499FF;
-			font-weight: 900;
-			font-size:35px;
+		#digital-clock {
+     			 font-family: Arial, sans-serif;
+  			 font-size: 48px;
+     			 color:#6499FF;
+     			 text-align: center;
+  		}
+		#Date {
+     			 font-family: Arial, sans-serif;
+  			 font-size: 48px;
+     			 color:#6499FF;
+     			 text-align: center;
 		}
 		#author{
 			color:grey;
@@ -133,11 +140,10 @@ input[type=submit] {
 		<button id="navbut1" onclick="window.open('https://dornhub.github.io/','_self');">Dornhub</button>
 		<button id="navbut2" onclick="window.open('https://dornhubpedia.wordpress.com/','_self');">𣿅国百科</button>
 		<button id="navbut3" onclick="window.open('https://dornstore.wordpress.com/','_self');">𣿅国商城</button>
-		<button id="navbut4" onclick="window.open('https://cgy22.github.io/dorn/dorn_calendar');">𣿅国日历</button>
-		<button id="navbut5" onclick="window.open('https://cgy22.github.io/dorn/random_number','_self');">随机抽号</button>
-		<button id="navbut6" onclick="window.open('https://cgy22.github.io/dorn/random_tonh','_self');">随机抽皓</button>
-		<button id="navbut7" onclick="window.open('https://www.bing.com/search?q=Bing+AI&showconv=1&FORM=hpcodx');">Bing AI(要工具)</button>
-		<button id="navbut8" onclick="window.open('https://dornhub.github.io/dgzl.html','_self');">关于𣿅国</button>
+		<button id="navbut4" onclick="window.open('https://cgy22.github.io/dorn/random_number','_self');">随机抽号</button>
+		<button id="navbut5" onclick="window.open('https://cgy22.github.io/dorn/random_tonh','_self');">随机抽皓</button>
+		<button id="navbut6" onclick="window.open('https://www.bing.com/search?q=Bing+AI&showconv=1&FORM=hpcodx');">Bing AI(要工具)</button>
+		<button id="navbut7" onclick="window.open('https://dornhub.github.io/dgzl.html','_self');">关于𣿅国</button>
 		
 	</p>
 </div>
@@ -154,7 +160,11 @@ input[type=submit] {
     <br>
     <br>
     <br>
-	  
+<div id="title">
+	<p>𣿅国时间</p>
+</div>  
+<div id="Date">日期</div>
+<div id="digital-clock">时间</div>
 <p style="text-align:center;">
   <img src="https://dornhub.github.io/images/Dorn-riverside.jpg" width="830px" height="350px" id="homeImg">
     </p>
@@ -171,21 +181,66 @@ input[type=submit] {
 </div>
   </body>
   <script>
-	  function startTime(){
-	var today=new Date();
-	var h=today.getHours();
-	var m=today.getMinutes();
-	var s=today.getSeconds();
-	m=checkTime(m);
-	s=checkTime(s);
-	document.getElementById('curtime').innerHTML=h+":"+m+":"+s;
-	t=setTimeout(function(){startTime()},500);
+function Time() {
+      var date = new Date();
+      var hour = date.getHours();
+      var minute = date.getMinutes();
+      var second = date.getSeconds();
+      var period = "";
+      
+       if (hour >= 12) {
+         period = "下午";
+       } else {
+         period = "上午";
+       }
+       
+       if (hour == 0) {
+         hour = 12;
+       } else {
+         if (hour > 12) {
+           hour = hour - 12;
+         }
+       }
+       
+       hour = update(hour);
+       minute = update(minute);
+       second = update(second);
+       
+       document.getElementById("digital-clock").innerText =period + " " + hour + " : " + minute + " : " + second;
+         
+        setTimeout(Time, 1000);
+    }
+    function update(t) {
+     if (t < 10) {
+        return "0" + t;
+     } else {
+        return t;
+     }
+   }
+   
+   Time();
+function date() {
+	var date = new Date();
+	var ms = date.getTime();
+	var actual = ms - 1577808000000;
+	var left = actual % 32054400000;
+	var yearms = actual - left;
+	var year = yearms / 32054400000 + 1;
+	var leftyear = year % 8;
+	var leftyear1 = year - leftyear;
+	var Olympics = leftyear1 * 32054400000; //fengexian
+	var actual2 = actual + Olympics;
+	var left2 = actual2 % 32054400000;
+	var yearms2 = actual2 - left2;
+	var year2 = yearms2 / 32054400000 + 1;
+	var leftmonth2 = left2 % 3974400000;
+	var actualmonthms = left2 - leftmonth2;
+	var month = actualmonthms / 3974400000 + 1;
+	var leftdayms = leftmonth2 % 86400000;
+	var dayms = leftmonth2 - leftdayms;
+	var day = dayms / 86400000 + 1;
+	document.getElementById("Date").innerText =year2 + "年" + month + "月" + day + "日";
 }
-function checkTime(i){
-	if (i<10){
-		i="0" + i;
-	}
-	return i;
-}
+date();
   </script>
 </html>
