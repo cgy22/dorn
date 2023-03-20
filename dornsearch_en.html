@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <title>DornSearch--Search Engine & Website Navigation</title>
+	  <link rel="icon" href="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimage2.sina.com.cn%2FIT%2Fother%2F2004-06-10%2FU73P2T1D374147F13DT20040610173949.jpg&refer=http%3A%2F%2Fimage2.sina.com.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1672128169&t=72b87204897814c21f69b40aec9b3ef4">
+	<style>
+		#title{
+			text-align: center;
+			color:#6499FF;
+		}
+		#title p{
+			color:#6499FF;
+			font-weight: 900;
+			font-size:35px;
+		}
+		#digital-clock {
+     			 font-family: Arial, sans-serif;
+  			 font-size: 48px;
+     			 color:#6499FF;
+     			 text-align: center;
+  		}
+		#Date {
+     			 font-family: Arial, sans-serif;
+  			 font-size: 48px;
+     			 color:#6499FF;
+     			 text-align: center;
+		}
+		#author{
+			color:grey;
+		}
+		#ch{
+			font-size: 25px;
+			font-weight: 900;
+			color: rgb(102,153,255);
+			border: 3px solid rgb(102,153,255);
+			border-radius: 30px;
+			width:100px;
+			height: 100px;
+			background: transparent;
+		}
+		#ch:hover{
+			background-color: rgb(102,153,255);
+			color: white;
+		}
+		#number{
+			font-size:50px;
+			color:rgb(102,153,255);
+		}
+		#inp{
+			font-size: 25px;
+			font-weight: 900;
+			color: rgb(102,153,255);
+			border: 1px solid rgb(102,153,255);
+			border-radius: 30px;
+			width:100px;
+			height: 30px;
+			background: transparent;
+		}
+		#nav{
+			position:absolute;
+			top:0px;
+			left:0px;
+			width:100%;
+			height:75px;
+			background-color:white;
+			position:fixed;
+		}
+		#navname1{
+			margin-left:175px;
+			font-weight:900;
+			background-color:transparent;
+			color:rgb(102,153,255);
+			font-size:30px;
+		}
+		#navname2{
+			font-weight:900;
+			height:50px;
+			color:white;
+			font-size:30px;
+			background-color:rgb(102,153,255);
+			border-radius:10px;
+		}
+		#navbut1,#navbut2,#navbut3,#navbut4,#navbut5,#navbut6,#navbut7,#navbut8,#navbut9{
+			width:80px;
+			color:black;
+			position:absolute;
+			top:0px;
+			height:75px;
+			background:transparent;
+			border:none;
+			position:stalic;
+		}
+		body{
+			width:100%;
+			height:100%;
+			background-color:rgb(240,240,240);
+		}
+		#navbut1{margin-left:5px;}
+		#navbut2{margin-left:85px;}
+		#navbut3{margin-left:165px;}
+		#navbut4{margin-left:245px;}
+		#navbut5{margin-left:325px;}
+		#navbut6{margin-left:405px;}
+		#navbut7{margin-left:485px;}
+		#navbut8{margin-left:565px;}
+		#navbut9{margin-left:645px;}
+		#navbut1:hover,#navbut2:hover,#navbut3:hover,#navbut4:hover,#navbut5:hover,#navbut6:hover,#navbut7:hover,#navbut8:hover,#navbut9:hover{
+			background-color:rgb(102,153,255);
+			color:white;
+		}
+		#center{
+			width: 50px;
+		}
+    input[type=text] {
+  width: 80%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 10%;
+  background-color: #6499FF;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+}
+		
+/* 设置ul元素为水平排列 */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* 设置li元素为浮动，并指定宽度 */
+li {
+  float: left;
+  width: 20%;
+}
+
+/* 设置a元素为块级，并添加背景色和边框 */
+a {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  background-color: #4EE4F8;
+  border: 1px solid #ccc;
+
+/* 添加font-family属性，指定字体为微软雅黑 */
+font-family:"Microsoft YaHei";
+  
+/* 添加text-decoration属性，去掉下划线 */
+text-decoration:none; 
+
+/* 添加font-weight属性，加粗文字 */
+font-weight:bold; 
+
+/* 添加font-size属性，放大文字 */
+font-size:20px; 
+
+/* 添加color属性，改变文字颜色 */
+color:black; 
+}
+
+/* 改变鼠标悬停时的背景色 */
+a:hover {
+  background-color: #6499FF;
+}
+
+	</style>
+	<script>
+		document.oncontextmenu=function(e){return false;}
+	</script>
+  </head>
+  <body>
+	<div id="nav">
+	<p>
+		<span id="navname1">Dorn</span>
+		<span id="navname2">&nbsp;Search&nbsp;</span>
+		&nbsp;&nbsp;
+		<button id="navbut1" onclick="window.open('https://dornhub.github.io/','_self');">Dornhub</button>
+		<button id="navbut2" onclick="window.open('https://dornhubpedia.wordpress.com/','_self');">Dornhubpedia</button>
+		<button id="navbut3" onclick="window.open('https://dornstore.wordpress.com/','_self');">DornStore</button>
+		<button id="navbut4" onclick="window.open('https://cgy22.github.io/dorn/random_number','_self');">Random Number</button>
+		<button id="navbut5" onclick="window.open('https://cgy22.github.io/dorn/random_tonh','_self');">Random Tonh</button>
+		<button id="navbut6" onclick="window.open('https://www.bing.com/search?q=Bing+AI&showconv=1&FORM=hpcodx');">Bing AI(You need a latter)</button>
+		<button id="navbut7" onclick="window.open('https://dornhub.github.io/dgzl.html','_self');">About Donh</button>
+		<button id="navbut8" onclick="window.open('https://cgy22.github.io/dorn/dornsearch_en','_self');">中文 (Chinese Version)</button>
+		
+	</p>
+</div>
+<br><br><br>
+    <div id="title">
+		<p>DornSearch</p>
+	    	<p>I question everything...</p>
+	</div>
+	  
+<form action="https://www.bing.com/search" method="get">
+<input type="text" name="q" placeholder="I can understand anything...">
+<input type="submit" value="I know, Go!">
+</form>
+    <br>
+    <br>
+    <br>
+<div id="title">
+	<p>Dorn Time</p>
+</div>  
+<div id="Date">Date</div>
+<div id="digital-clock">Time</div>
+<p style="text-align:center;">
+  <img src="https://cgy22.github.io/dorn/20230311173536_1.jpg" width="830px" height="350px" id="homeImg">
+    </p>
+<div style="text-align:center">Capital Scenery</div>
+	
+	<br><br><br>
+	
+			<br><br><br><br><br><br>
+	  
+<div id="title">
+		<p>DornSearch Website Navigation</p>
+	</div>
+	  <br><br><br>
+<h1>Hot</h1>
+
+<ul>
+<li><a href="https://dornhub.github.io">Dornhub</a></li>
+<li><a href="https://www.baidu.com">Baidu</a></li>
+<li><a href="https://www.bilibili.com">Bilibili</a></li>
+<li><a href="https://fanyi.baidu.com">Baidu Translate</a></li>
+<li><a href="https://dornhub.github.io/valeriette/donh-destiny-forecast.html">Donh Destiny Forecast Sim</a></li>
+</ul> 
+ 
+<br><br><br><br><br>
+
+<h1>Search Engine</h1>
+
+<ul>
+<li><a href="https://www.baidu.com">Baidu</a></li>
+<li><a href="https://www.sogou.com">Sogou</a></li>
+<li><a href="https://www.bing.com">Bing</a></li>
+<li><a href="https://www.hao123.com">hao123</a></li>
+<li><a href="https://hao.360.com/?a1004">hao.360</a></li>
+<li><a href="https://www.google.com">Google</a></li>
+<li><a href="https://duckduckgo.com">DuckDuckGo</a></li>
+<li><a href="https://yandex.com">Yandex</a></li>
+<li><a href="https://www.ecosia.org">Ecosia</a></li>
+<li><a href="https://www.yahoo.com">Yahoo</a></li>
+</ul>
+  
+<br><br><br><br><br>
+  
+<h1>Video Website</h1>
+
+<ul>
+<li><a href="https://www.bilibili.com">Bilibili</a></li>
+<li><a href="https://www.ixigua.com">Xigua</a></li>
+<li><a href="https://www.iqiyi.com">Iqiyi</a></li>
+<li><a href="https://v.qq.com">QQ Video</a></li>
+<li><a href="https://youku.com">Youku</a></li>
+<li><a href="https://haokan.baidu.com">Haokan</a></li>
+<li><a href="https://tv.souhu.com">Souhu</a></li>
+<li><a href="https://www.mgtv.com/index.html">Mango TV</a></li>
+<li><a href="https://www.miguvideo.com/mgs/website/prd/index.html">Migu</a></li>
+<li><a href="https://www.youtube.com">Youtube</a></li>
+</ul>
+  
+<br><br><br><br><br>
+  
+<h1>Scholar Website</h1>
+
+<ul>
+<li><a href="https://baike.baidu.com">Baidu Encyclopedia</a></li>
+<li><a href="https://en.wikipedia.org">Wikipedia</a></li>
+<li><a href="https://scholar.google.com">Google Scholar</a></li>
+<li><a href="https://www.cnki.net/">CNKI</a></li>
+</ul>
+  
+<br><br><br><br><br>
+  
+<h1>Translate Website</h1>
+
+<ul>
+<li><a href="https://fanyi.baidu.com">Baidu Translate</a></li>
+<li><a href="https://fanyi.sogou.com">Sogou Translate</a></li>
+<li><a href="https://fanyi.youdao.com">Youdao Translate</a></li>
+<li><a href="https://www.bing.com/translator">Microsoft Bing Translate</a></li>
+<li><a href="https://translate.google.com">Google Translate</a></li>
+</ul>
+
+<br><br><br><br><br>
+	  
+<h1>Music Website</h1>
+
+<ul>
+<li><a href="https://music.163.com">Music 163</a></li>
+<li><a href="https://www.kugou.com">Kugou Music</a></li>
+<li><a href="https://www.kuwo.cn">Kuwo Music</a></li>
+<li><a href="https:/music.qq.com">QQ Music</a></li>
+<li><a href="https://musescore.org">Musescore</a></li>
+</ul>
+
+<br><br><br><br><br>
+	  
+<h1>Information Technology</h1>
+
+<ul>
+<li><a href="https://www.microsoft.com">Microsoft</a></li>
+<li><a href="https://github.com">Github</a></li>
+<li><a href="https://www.python.org">Python</a></li>
+</ul>
+
+<br><br><br><br><br>
+  
+<h1>Donhfuc Website</h1>
+
+<ul>
+<li><a href="https://dornhub.github.io">Dornhub</a></li>
+<li><a href="https://dornhubpedia.wordpress.com">Dornhubpedia</a></li>
+<li><a href="https://dornstore.wordpress.com">DornStore</a></li>
+<li><a href="https://cgy22.github.io/dorn/dornsearch">DornSearch</a></li>
+<li><a href="https://cgy22.github.io/dorn/random_number">Random Number</a></li>
+<li><a href="https://cgy22.github.io/dorn/random_tonh">Random Tonh</a></li>
+<li><a href="https://cgy22.github.io/dorn/dorn_calendar">Dorn Calendar</a></li>
+<li><a href="https://dornhub.github.io/valeriette/donh-destiny-forecast.html">Donh Destiny Forecast Sim</a></li>
+<li><a href="https://dornhub.github.io/valeriette/index.html">DornDorn/a></li>
+</ul>
+  
+<br><br><br><br><br>
+
+	
+<div id="bottom_div">
+	<div id="br"></div>
+	<p align="center">Produced by 1303CGY & ChatGPT</p>
+	<p align="center">Copyright ©2022-2023 Dornhub, All Rights Reserved.</p>
+	<p align="center">Verision: 2.0</p>
+	<div id="br"></div>
+</div>
+  </body>
+  <script>
+function Time() {
+      var date = new Date();
+      var hour = date.getHours();
+      var minute = date.getMinutes();
+      var second = date.getSeconds();
+      var period = "";
+      
+       if (hour >= 12) {
+         period = "PM";
+       } else {
+         period = "AM";
+       }
+       
+       if (hour == 0) {
+         hour = 12;
+       } else {
+         if (hour > 12) {
+           hour = hour - 12;
+         }
+       }
+       
+       hour = update(hour);
+       minute = update(minute);
+       second = update(second);
+       
+       document.getElementById("digital-clock").innerText =hour + " : " + minute + " : " + second + " " + period;
+         
+        setTimeout(Time, 1000);
+    }
+    function update(t) {
+     if (t < 10) {
+        return "0" + t;
+     } else {
+        return t;
+     }
+   }
+   
+   Time();
+function date() {
+	var date = new Date();
+	var ms = date.getTime();
+	var actual = ms - 1577808000000;
+	var left = actual % 32054400000;
+	var yearms = actual - left;
+	var year = yearms / 32054400000 + 1;
+	var leftyear = year % 8;
+	var leftyear1 = year - leftyear;
+	var Olympics = leftyear1 * 32054400000; //fengexian
+	var actual2 = actual + Olympics;
+	var left2 = actual2 % 32054400000;
+	var yearms2 = actual2 - left2;
+	var year2 = yearms2 / 32054400000 + 1;
+	var leftmonth2 = left2 % 3974400000;
+	var actualmonthms = left2 - leftmonth2;
+	var month = actualmonthms / 3974400000 + 1;
+	var leftdayms = leftmonth2 % 86400000;
+	var dayms = leftmonth2 - leftdayms;
+	var day = dayms / 86400000 + 1;
+	document.getElementById("Date").innerText =year2 + "/" + month + "/" + day;
+}
+date();
+  </script>
+</html>
