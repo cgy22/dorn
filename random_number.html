@@ -13,6 +13,16 @@
 			font-weight: 100;
 			font-size:35px;
 		}
+		#current_date{
+			font-size:30px;
+			color:rgb(102,153,255);
+			text-align: center;
+		}
+		#current_date1{
+			font-size:30px;
+			color:rgb(102,153,255);
+			text-align: center;
+		}
 		#author{
 			color:grey;
 		}
@@ -125,6 +135,8 @@
     <div id="title">
 		<p>随机抽号器</p>
 	</div>
+	  <div id="current_date"></div>
+	   <div id="current_date1"></div>
 	<div align="center" id="shownum">
 		<strong id="number">- 请抽号 -</strong>
 	</div>
@@ -157,5 +169,13 @@
 		}
 		document.getElementById("number").innerHTML = die_people;
 	  }
+
+var today = new Date();
+var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+document.getElementById("current_date").innerHTML = "今天的日期是：" + date;
+	  
+var today = new Date();
+var date = today.getDate();
+document.getElementById("current_date1").innerHTML = "我们建议您抽取" + date + "号";
   </script>
 </html>
