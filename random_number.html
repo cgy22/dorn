@@ -157,6 +157,8 @@
 	  var num = 0;
 	  var tonhnb = 0;
 	  function chouhao(){
+		var today = new Date();
+		var date = today.getDate();
 		tonhnb = Math.random()*2.5;
 		num = document.getElementById("inp").value;
 		die_people = (Math.random()*num).toFixed(0);
@@ -164,9 +166,10 @@
 		if(die_people == 45 || die_people == 43 || die_people == 33 || die_people == 35){
 			chouhao();
 		}else if(tonhnb <= 0.6 && tonhnb > 0.45){
-			document.getElementById("number").innerHTML = '49';
+			document.getElementById("number").innerHTML = date;
 			return;
 		}
+		 
 		document.getElementById("number").innerHTML = die_people;
 	  }
 
