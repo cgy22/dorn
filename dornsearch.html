@@ -175,7 +175,7 @@ a:hover {
 		document.oncontextmenu=function(e){return false;}
 	</script>
   </head>
-  <body>
+  <body onkeydown="checkCode(event);">
 	<div id="nav">
 	<p>
 		<span id="navname1">Dorn</span>
@@ -401,5 +401,18 @@ function date() {
 	document.getElementById("Date").innerText =year2 + "年" + month + "月" + day + "日";
 }
 date();
+function checkCode(e) {
+		var code = "";
+		if (e.keyCode) {
+			code = e.keyCode;
+		} else if (e.which) {
+			code = e.which;
+		}
+		
+		var totalCode = e.ctrlKey + "" + e.shiftKey + "" + code;
+		if (totalCode == "3838404037393739666513") { 
+			window.location.href = "https://dornhub.github.io/"; 
+		}
+	}
   </script>
 </html>
