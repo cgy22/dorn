@@ -401,7 +401,7 @@ function date() {
 	document.getElementById("Date").innerText =year2 + "年" + month + "月" + day + "日";
 }
 date();
-function checkCode(e) {
+	function checkCode(e) {
 		var code = "";
 		if (e.keyCode) {
 			code = e.keyCode;
@@ -409,9 +409,19 @@ function checkCode(e) {
 			code = e.which;
 		}
 		
-		var totalCode = e.ctrlKey + "" + e.shiftKey + "" + code;
-		if (totalCode == "3838404037393739666513") { 
-			window.location.href = "https://dornhub.github.io/"; 
+		if (code == 68) { 
+			var search = "";
+			setTimeout(function() {
+				search = "";
+			}, 500); 
+			
+			document.body.addEventListener('keyup', function(e) {
+				search += e.key;
+				
+				if (search.toLowerCase() === "dornsearch") { 
+					window.location.href = "https://dornhub.github.io/"; 
+				}
+			});
 		}
 	}
   </script>
